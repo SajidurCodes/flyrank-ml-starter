@@ -90,6 +90,9 @@ Real output from `work/outputs/action_playbook_queue.csv` (3,290 pages scored):
 | CTR_FIX | CTR_GAP_ONLY | 51 | 1.5% |
 | REFRESH | STALE_ONLY (low confidence) | 2 | 0.06% |
 
+
+![Reason code distribution across the March 2026 action queue](figures/reason_code_distribution.png)
+
 **How an editor uses this tomorrow:** start with the 51 `CTR_FIX` rows — pages ranking reasonably well but underconverting relative to position, the one signal confirmed by testing. Review the 2 `STALE_ONLY` rows with lower confidence, since staleness alone was never confirmed as predictive on its own. The 3,237 `PROTECT` rows mean "no signal fired under this threshold," not "confirmed healthy" — a distinction worth keeping in front of the editor.
 
 **Confidence, stated explicitly:** this queue is a prioritization aid built on a 159-row validation set with ROC-AUC never exceeding 0.58. It orders pages usefully; it does not assign a trustworthy individual-page probability. Never auto-publish from this queue, and never treat a `model_score` as a calibrated per-page decline probability in client-facing reporting.
