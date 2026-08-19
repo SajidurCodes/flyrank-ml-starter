@@ -1,0 +1,24 @@
+{
+  "model": "Logistic Regression (final, trained on all rows)",
+  "label_definition": "clicks_april vs clicks_march, decline threshold -15%, min 5 clicks_march",
+  "validation_source": "w06_validation_audit.ipynb, client-grouped split, n=159 test rows",
+  "validation_precision_at_10pct": 0.8,
+  "validation_roc_auc": 0.53,
+  "baseline_rule_precision_at_10pct": 0.667,
+  "baseline_rule_roc_auc": 0.579,
+  "total_queue_rows": 3290,
+  "action_distribution": {
+    "PROTECT": 3237,
+    "CTR_FIX": 51,
+    "REFRESH": 2
+  },
+  "reason_code_distribution": {
+    "HEALTHY": 3237,
+    "CTR_GAP_ONLY": 51,
+    "STALE_ONLY": 2
+  },
+  "confidence_distribution": {
+    "standard": 3288,
+    "low": 2
+  }
+}
